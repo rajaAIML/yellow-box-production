@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: 10 10 10;
+  --color-surface: 17 17 17;
+  --color-text: 255 255 255;
+  --color-text-muted: 153 153 153;
+  --color-primary: 255 199 0;
+  --color-border: 41 41 41;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --container-width: 1440px;
+
+  --duration-fast: 0.2s;
+  --duration-normal: 0.5s;
+  --duration-slow: 1s;
+  --duration-cinematic: 1.5s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 199, 0, 0.25);
+  color: rgb(var(--color-text));
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.section-padding {
+  @apply px-5 md:px-8 lg:px-12 xl:px-16;
+}
+
+.section-label {
+  @apply font-display text-xs tracking-[0.35em] uppercase text-primary;
+}
+
+.section-heading {
+  @apply font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight tracking-tight;
+}
+
+.section-subheading {
+  @apply text-muted text-base md:text-lg max-w-xl leading-relaxed;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary/40 text-sm tracking-[0.2em] uppercase font-display transition-all duration-300 hover:bg-primary hover:text-background hover:border-primary;
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 3px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role='button'] {
+    cursor: none;
+  }
+}
