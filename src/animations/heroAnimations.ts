@@ -8,6 +8,10 @@ export function createHeroScrollAnimation(
   contentRef: HTMLElement,
   onProgress?: (progress: number) => void
 ): ScrollTrigger {
+  // Reset any inline opacity left by a previous animation/HMR update. The hero
+  // must never fade below readable contrast on the Electric Cinema background.
+  gsap.set(contentRef, { opacity: 1 });
+
   return ScrollTrigger.create({
     trigger: heroRef,
     start: 'top top',
@@ -16,7 +20,6 @@ export function createHeroScrollAnimation(
     onUpdate: (self) => {
       onProgress?.(self.progress);
       gsap.to(contentRef, {
-        opacity: 1 - self.progress * 1.5,
         y: self.progress * -80,
         duration: 0.1,
         overwrite: true,

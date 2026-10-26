@@ -49,7 +49,7 @@ export function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div ref={imageRef} className="relative aspect-[4/5] overflow-hidden">
           <LazyImage
-            src="/images/portraits/quiet-confidence.svg"
+            src="/images/portraits/yellowboxproduction_1629913915_2648232324208393865_31970441824.jpg"
             alt="Yellow Box Production team portrait"
             className="w-full h-full object-cover"
           />

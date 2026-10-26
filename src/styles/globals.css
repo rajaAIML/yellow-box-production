@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color-background: 10 10 10;
-  --color-surface: 17 17 17;
-  --color-text: 255 255 255;
-  --color-text-muted: 153 153 153;
-  --color-primary: 255 199 0;
-  --color-border: 41 41 41;
+  /* Electric Cinema — a dark, high-contrast cinematic palette. */
+  --color-background: 10 10 10; /* #0A0A0A */
+  --color-surface: 22 22 20;
+  --color-text: 245 245 240; /* #F5F5F0 */
+  --color-text-muted: 182 255 0; /* #B6FF00 */
+  --color-primary: 255 240 0; /* #FFF000 */
+  --color-border: 223 255 0; /* #DFFF00 */
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -60,8 +61,8 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 199, 0, 0.25);
-  color: rgb(var(--color-text));
+  background: rgb(var(--color-primary));
+  color: rgb(var(--color-background));
 }
 
 :focus-visible {
@@ -103,7 +104,7 @@ button {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary/40 text-sm tracking-[0.2em] uppercase font-display transition-all duration-300 hover:bg-primary hover:text-background hover:border-primary;
+  @apply inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary bg-primary text-background text-sm tracking-[0.2em] uppercase font-display transition-all duration-300 hover:bg-border hover:border-border;
 }
 
 .btn-primary:focus-visible {
@@ -127,13 +128,7 @@ button {
 }
 
 @media (pointer: fine) {
-  body.custom-cursor-active {
-    cursor: none;
-  }
-
-  body.custom-cursor-active a,
-  body.custom-cursor-active button,
-  body.custom-cursor-active [role='button'] {
+  .founder-capture-area {
     cursor: none;
   }
 }

@@ -53,7 +53,7 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick('#home');
             }}
-            className="font-display text-sm md:text-base tracking-[0.25em] uppercase"
+            className="font-display text-sm md:text-base tracking-[0.25em] uppercase text-primary"
           >
             Yellow Box
           </a>

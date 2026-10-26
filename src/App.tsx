@@ -8,7 +8,6 @@ import { GallerySection } from './components/gallery/GallerySection';
 import { HeroSection } from './components/hero/HeroSection';
 import { LoadingScreen } from './components/loading/LoadingScreen';
 import { Navigation } from './components/navigation/Navigation';
-import { CustomCursor } from './components/ui/CustomCursor';
 import { SmoothScrollProvider } from './providers/SmoothScrollProvider';
 
 export default function App() {
@@ -21,7 +20,6 @@ export default function App() {
   return (
     <SmoothScrollProvider>
       {loading && <LoadingScreen onComplete={handleLoadComplete} />}
-      <CustomCursor />
       <Navigation />
       <main>
         <HeroSection />
