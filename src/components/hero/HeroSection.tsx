@@ -3,6 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 import { siteConfig } from '../../data/site';
 import { usePrefersFinePointer } from '../../hooks/useMediaQuery';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { assetUrl } from '../../utils/assets';
 import { CaptureFlash } from '../founder/CaptureFlash';
 import { FounderCursor } from '../founder/FounderCursor';
 import { FounderPortraitOverlay } from '../founder/FounderPortraitOverlay';
@@ -36,7 +37,7 @@ export function HeroSection() {
         />
         <div className="absolute right-0 top-0 h-full w-[48%] hidden md:block pointer-events-none">
           <div className="absolute inset-y-[8%] left-[12%] right-0 overflow-hidden bg-surface">
-            <img src="/images/founder.jpg" alt="" className="w-full h-full object-cover object-center grayscale-[15%]" />
+            <img src={assetUrl('/images/founder.jpg')} alt="" className="w-full h-full object-cover object-center grayscale-[15%]" />
           </div>
           <div className="absolute inset-y-[8%] left-[12%] right-0 border border-foreground/15" />
         </div>
@@ -53,7 +54,7 @@ export function HeroSection() {
             <p className="section-subheading mb-10 text-foreground/80">{siteConfig.tagline} Photography, film, and visual stories made with intent.</p>
             <button onClick={handleExplore} className="btn-primary">Explore Work</button>
             <button type="button" onClick={handleCapture} className="mt-5 flex md:hidden items-center gap-3 text-left text-xs tracking-[0.2em] uppercase text-muted hover:text-primary transition-colors" aria-label="Capture founder portrait">
-              <span className="w-9 h-9 rounded-full overflow-hidden border border-primary/70"><img src="/images/founder.jpg" alt="" className="w-full h-full object-cover" /></span>
+              <span className="w-9 h-9 rounded-full overflow-hidden border border-primary/70"><img src={assetUrl('/images/founder.jpg')} alt="" className="w-full h-full object-cover" /></span>
               Capture the founder portrait
             </button>
           </div>

@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 import { siteConfig } from '../../data/site';
+import { assetUrl } from '../../utils/assets';
 import { LazyImage } from '../ui/LazyImage';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +50,7 @@ export function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div ref={imageRef} className="relative aspect-[4/5] overflow-hidden">
           <LazyImage
-            src="/images/portraits/yellowboxproduction_1629913915_2648232324208393865_31970441824.jpg"
+            src={assetUrl('/images/portraits/yellowboxproduction_1629913915_2648232324208393865_31970441824.jpg')}
             alt="Yellow Box Production team portrait"
             className="w-full h-full object-cover"
           />

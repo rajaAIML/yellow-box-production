@@ -131,7 +131,11 @@ export const photos: Photo[] = [
     image: '/images/sports/iamvinaybhargav_1704535417_3274202851761184849_1687504298.jpg',
     thumbnail: '/images/sports/iamvinaybhargav_1704535417_3274202851761184849_1687504298.jpg',
   },
-];
+].map((photo) => ({
+  ...photo,
+  image: assetUrl(photo.image),
+  thumbnail: photo.thumbnail ? assetUrl(photo.thumbnail) : undefined,
+}));
 
 export const featuredPhotos = photos.filter((p) => p.featured);
 
@@ -142,3 +146,4 @@ export function getPhotoById(id: string): Photo | undefined {
 export function getPhotosByCategory(category: string): Photo[] {
   return photos.filter((p) => p.category.toLowerCase() === category.toLowerCase());
 }
+import { assetUrl } from '../utils/assets';

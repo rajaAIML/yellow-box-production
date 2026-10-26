@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import { assetUrl } from '../../utils/assets';
 
 interface FounderPortraitOverlayProps {
   open: boolean;
@@ -7,7 +8,7 @@ interface FounderPortraitOverlayProps {
   reducedMotion: boolean;
 }
 
-const founderPortrait = '/images/founder.jpg';
+const founderPortrait = assetUrl('/images/founder.jpg');
 
 export function FounderPortraitOverlay({ open, onClose, reducedMotion }: FounderPortraitOverlayProps) {
   const contentRef = useRef<HTMLDivElement>(null);

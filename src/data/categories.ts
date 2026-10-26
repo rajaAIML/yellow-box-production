@@ -49,4 +49,5 @@ export const categories: Category[] = [
     image: '/images/sports/iamvinaybhargav_1704291951_3272160510086864789_1687504298.jpg',
     description: 'The power and precision of movement.',
   },
-];
+].map((category) => ({ ...category, image: assetUrl(category.image) }));
+import { assetUrl } from '../utils/assets';

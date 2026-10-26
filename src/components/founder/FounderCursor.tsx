@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import { assetUrl } from '../../utils/assets';
 
 interface FounderCursorProps {
   active: boolean;
@@ -7,7 +8,7 @@ interface FounderCursorProps {
   reducedMotion: boolean;
 }
 
-const founderPortrait = '/images/founder.jpg';
+const founderPortrait = assetUrl('/images/founder.jpg');
 
 export function FounderCursor({ active, target, reducedMotion }: FounderCursorProps) {
   const cursorRef = useRef<HTMLDivElement>(null);
